@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 /***************************************我的接口******************************************************************/
-Route::prefix('api')->group(function(){
+Route::prefix('api')->middleware('header')->group(function(){
     Route::post('shop/add','Api\MyapiController@add');//商品添加
     Route::get('shop/show','Api\MyapiController@show');//商品数据展示
 });
